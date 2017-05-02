@@ -59,15 +59,14 @@ INSERT INTO `blesk1`.`Osoba_has_Smena` (`idOsoba`, `idSmena`) VALUES ('6', '13')
 INSERT INTO `blesk1`.`Prichod` (`idPrichod`, `idOsoba`, `kdy`) VALUES (NULL, '1', '2017-04-30 07:59:00.000');
 INSERT INTO `blesk1`.`Prichod` (`idPrichod`, `idOsoba`, `kdy`) VALUES (NULL, '6', '2017-04-30 08:15:00.000');
 
-INSERT INTO `blesk1`.`Objednavka` (`idObjednavka`, `idJizda`, `casVytvoreni`, `casPristaveniTaxi`, `idAdresa`, `pocetVozu`, `poznamka`) 
-VALUES (NULL, NULL, '2017-04-28 09:18:15.000', '2017-04-30 16:00:00.000', '1', '1', 'se psem');
 
 INSERT INTO `blesk1`.`Objednavka` (`idObjednavka`, `casVytvoreni`, `casPristaveniTaxi`, `idAdresa`, `pocetVozu`, `poznamka`) 
 VALUES (NULL, '2017-04-28 09:18:15.000', '2017-04-30 16:00:00.000', '1', '1', 'se psem');
 
 /* Atribut idObjednavka muze byt null - v tom pripade byla jizda bez objednavky = nalozeni zakaznika nekde po meste a nahlaseni kam ho vezu*/
-INSERT INTO `blesk1`.`Jizda` (`idJizda`, `idAdresaOdkud`, `idAdresaKam`, `idSmena`, `pribliznaCena`, `casStart`, `casKonec`, `idRidic`, `Ridic_idOsoba`, `idObjednavka`) 
-VALUES (NULL, '1', '2', '13', '65', '2017-04-30 16:02:00.000', '2017-04-30 16:09:00.000', '1', '1', '1');
+
+INSERT INTO `blesk1`.`Jizda` (`idJizda`, `idAdresaOdkud`, `idAdresaKam`, `idRidic`, `casStart`, `casKonec`, `idSmena`, `idObjednavka`, `pribliznaCena`, `Ridic_idOsoba`, `pocetOsob`) 
+VALUES (NULL, '1', '2', '1', '2017-04-30 16:02:00.000', '2017-04-30 16:09:00.000', '13', NULL, '65', '1', '1')
 
 SELECT Objednavka.casVytvoreni, Objednavka.casPristaveniTaxi, Adresa.ulice, Adresa.cislo From Objednavka, Adresa WHERE 
 Objednavka.idAdresa = Adresa.idAdresa;
