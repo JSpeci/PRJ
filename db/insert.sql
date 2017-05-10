@@ -29,6 +29,7 @@ INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5',
 INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '2');
 INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '3');
 INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '4');
+INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '5');
 
 INSERT INTO `blesk1`.`Dispecer` (`idDispecer`, `idOsoba`, `idStav`) VALUES (NULL, '6', '5');
 
@@ -66,8 +67,6 @@ VALUES (NULL, '2017-04-28 09:18:15.000', '2017-04-30 16:00:00.000', '1', '1', 's
 INSERT INTO `blesk1`.`Jizda` (`idJizda`, `idAdresaOdkud`, `idAdresaKam`, `idRidic`, `casStart`, `casKonec`, `idSmena`, `idObjednavka`, `pribliznaCena`, `Ridic_idOsoba`, `pocetOsob`) 
 VALUES (NULL, '1', '2', '1', '2017-04-30 16:02:00.000', '2017-04-30 16:09:00.000', '13', NULL, '65', '1', '1')
 
-SELECT Objednavka.casVytvoreni, Objednavka.casPristaveniTaxi, Adresa.ulice, Adresa.cislo From Objednavka, Adresa WHERE 
-Objednavka.idAdresa = Adresa.idAdresa;
 
 
 
