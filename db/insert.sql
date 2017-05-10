@@ -23,16 +23,32 @@ INSERT INTO `blesk1`.`Osoba` (`idOsoba`, `prezdivka`, `jmeno`, `adresa`, `email`
 VALUES (NULL, 'Radim', 'Radim Spiler', NULL , NULL, '776631492', md5('heslo'));
 
 INSERT INTO `blesk1`.`Osoba` (`idOsoba`, `prezdivka`, `jmeno`, `adresa`, `email`, `telefon`, `pass`) 
+VALUES (NULL, 'Dalča', 'Dalibor Čirlič', NULL , NULL, '123456789', md5('heslo'));
+
+INSERT INTO `blesk1`.`Osoba` (`idOsoba`, `prezdivka`, `jmeno`, `adresa`, `email`, `telefon`, `pass`) 
+VALUES (NULL, 'Tomin', 'Tomáš Dvořáček', NULL , NULL, '123456789', md5('heslo'));
+
+INSERT INTO `blesk1`.`Osoba` (`idOsoba`, `prezdivka`, `jmeno`, `adresa`, `email`, `telefon`, `pass`) 
+VALUES (NULL, 'Luďek', 'Luděk Dousek', NULL , NULL, '123456789', md5('heslo'));
+
+INSERT INTO `blesk1`.`Osoba` (`idOsoba`, `prezdivka`, `jmeno`, `adresa`, `email`, `telefon`, `pass`) 
+VALUES (NULL, 'Jenda', 'Jan Špecián', NULL , NULL, '739551887', md5('heslo'));
+
+INSERT INTO `blesk1`.`Osoba` (`idOsoba`, `prezdivka`, `jmeno`, `adresa`, `email`, `telefon`, `pass`) 
 VALUES (NULL, 'Sváťa', 'Sváťa', NULL , NULL, '773003003', md5('heslo'));
 
 
-INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '1');
-INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '2');
-INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '3');
-INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '4');
+INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '1', '1');
+INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '3', '2');
+INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '4', '3');
+INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '2', '4');
 INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '5');
+INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '6');
+INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '1', '7');
+INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '8');
+INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '9');
 
-INSERT INTO `blesk1`.`Dispecer` (`idDispecer`, `idOsoba`, `idStav`) VALUES (NULL, '6', '5');
+INSERT INTO `blesk1`.`Dispecer` (`idDispecer`, `idOsoba`, `idStav`) VALUES (NULL, '10', '1');
 
 
 INSERT INTO `blesk1`.`Auto` (`idAuto`, `idRidic`, `idVysilacka`, `znacka`, `model`, `barva`, `pocetMist`, `regZnacka`, `taxiOdDne`) 
@@ -53,8 +69,9 @@ INSERT INTO `blesk1`.`Misto` (`idMisto`, `idAdresa`, `nazev`) VALUES (NULL, '2',
 
 INSERT INTO `blesk1`.`Smena` (`idSmena`, `od`, `do`, `poznamka`) VALUES (NULL, '2017-04-29 20:00:00.000', '2017-04-30 8:00:00.000', NULL);
 INSERT INTO `blesk1`.`Smena` (`idSmena`, `od`, `do`, `poznamka`) VALUES (NULL, '2017-04-30 08:00:00.000', '2017-04-30 20:00:00.000', NULL);
+INSERT INTO `blesk1`.`Smena` (`idSmena`, `od`, `do`, `poznamka`) VALUES (NULL, '2017-05-10 08:00:00.000', '2017-5-10 20:00:00.000', "streda");
 
-INSERT INTO `blesk1`.`Osoba_has_Smena` (`idOsoba`, `idSmena`) VALUES ('6', '13'), ('1', '13');
+INSERT INTO `blesk1`.`Osoba_has_Smena` (`idOsoba`, `idSmena`) VALUES ('1', '3'), ('4', '3'), ('10', '3');
 
 INSERT INTO `blesk1`.`Prichod` (`idPrichod`, `idOsoba`, `kdy`) VALUES (NULL, '1', '2017-04-30 07:59:00.000');
 INSERT INTO `blesk1`.`Prichod` (`idPrichod`, `idOsoba`, `kdy`) VALUES (NULL, '6', '2017-04-30 08:15:00.000');
