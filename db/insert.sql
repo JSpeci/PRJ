@@ -41,17 +41,17 @@ INSERT INTO `blesk1`.`Osoba` (`idOsoba`, `prezdivka`, `jmeno`, `adresa`, `email`
 VALUES (5, 'Jana', 'Jana', NULL , NULL, '773003003', md5('heslo'));
 
 
-INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (15, '1', '4');
-INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '3', '2');
-INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '4', '14');
-INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '2', '20');
+INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (15, '5', '4');
+INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '2');
+INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '14');
+INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '20');
 INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '3');
 INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '8');
-INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '1', '19');
+INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '19');
 INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '15');
 INSERT INTO `blesk1`.`Ridic` (`idRidic`, `idStav`, `idOsoba`) VALUES (NULL, '5', '17');
 
-INSERT INTO `blesk1`.`Dispecer` (`idDispecer`, `idOsoba`, `idStav`) VALUES (NULL, '1', '7');
+INSERT INTO `blesk1`.`Dispecer` (`idDispecer`, `idOsoba`, `idStav`) VALUES (NULL, '1', '5');
 INSERT INTO `blesk1`.`Dispecer` (`idDispecer`, `idOsoba`, `idStav`) VALUES (NULL, '5', '5');
 
 
@@ -78,13 +78,13 @@ INSERT INTO `blesk1`.`Smena` (`idSmena`, `od`, `do`, `poznamka`) VALUES (NULL, '
 INSERT INTO `blesk1`.`Osoba_has_Smena` (`idOsoba`, `idSmena`) VALUES ('1', '3'), ('4', '3'), ('10', '3');
 
 
-INSERT INTO `blesk1`.`Objednavka` (`idObjednavka`, `casVytvoreni`, `casPristaveniTaxi`, `idAdresa`, `pocetVozu`, `poznamka`) 
-VALUES (NULL, '2017-04-28 09:18:15.000', '2017-04-30 16:00:00.000', '1', '1', 'se psem');
+INSERT INTO `blesk1`.`Objednavka` (`idObjednavka`, `casVytvoreni`, `casPristaveniTaxi`, `idAdresa`, `pocetVozu`, `poznamka`, `vyrizena`) 
+VALUES (NULL, '2017-04-28 09:18:15.000', '2017-04-30 16:00:00.000', '1', '1', 'se psem', '1');
 
 /* Atribut idObjednavka muze byt null - v tom pripade byla jizda bez objednavky = nalozeni zakaznika nekde po meste a nahlaseni kam ho vezu*/
 
-INSERT INTO `blesk1`.`Jizda` (`idJizda`, `idRidic`, `Ridic_idOsoba`, `idAdresaOdkud`, `idAdresaKam`, `casStart`, `casKonec`, `idSmena`, `idObjednavka`, `pribliznaCena`, `pocetOsob`) 
-VALUES (NULL, '1', '4', '1','2', '2017-04-30 16:02:00.000', '2017-04-30 16:09:00.000', '13', NULL, '65', '1');
+INSERT INTO `blesk1`.`Jizda` (`idJizda`, `idRidic`, `idAdresaOdkud`, `idAdresaKam`, `casStart`, `casKonec`, `idSmena`, `idObjednavka`, `pribliznaCena`, `pocetOsob`) 
+VALUES (NULL, '1', '4','2', '2017-04-30 16:02:00.000', '2017-04-30 16:09:00.000', '13', NULL, '65', '1');
 
     
 INSERT INTO Smena values(null,'2017-5-13 8:00:00.0', '2017-5-13 20:00:00.0',null);

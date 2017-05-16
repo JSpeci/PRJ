@@ -1,0 +1,56 @@
+{* Latte template *}
+
+{block content}
+{if $user->IsLoggedIn()}
+    <div class="radek">
+        <div id="dochazka" class="block">
+            <h1>Docházka řidičů</h1>
+            <div>
+                {control dochazkaRidicuForm}
+            </div>
+        </div>
+
+
+        <div id="dochazka" class="block">
+            <h1>Docházka dispečerů</h1>
+            <div>
+                {control dochazkaDispeceruForm}
+            </div>
+        </div>
+
+        <div class="block" id="dispecer">
+            <h1>Poslední směna</h1>
+            <span>{if $posledniSmenaBezi} Tato směna nyní běží.{else} Nyní neběží žádná směna, zadej směnu. {/if}</span>
+            <span>{$aktualniSmena->od|date:'%d.%m. %H'}h</span>
+            <span>{$aktualniSmena->do|date:'%d.%m. %H'}h</span>
+            {if $posledniSmenaBezi}
+                <h1>V této směně</h1><ul> 
+                    {foreach $osobyVeSmene as $os}
+                        <li>{$os->prezdivka}</li> 
+                    {/foreach}
+                </ul>
+            {/if}
+        </div>
+        {if !$posledniSmenaBezi}
+            <div class="block" id="dispecer">
+                <h1>Vytvor směnu</h1>
+                {control smenaVytvoritForm}
+            </div>
+        {/if}
+
+        {if $posledniSmenaBezi}
+            <div class="block" id="dispecer">
+                <h1>Přidej osoby do směny</h1>
+                <span>Směna od {$aktualniSmena->od|date:'%d.%m. %H'}h do 
+                    {$aktualniSmena->do|date:'%d.%m. %H'}h</span>       
+                    {control smenaPridavaniLidiForm}
+            </div>
+        {/if}
+        
+           <div class="block" id="dispecer">
+               <a n:href="Homepage:"><h1>Zpět</h1></a>
+            </div>
+
+{else}
+    <a n:href="Sign:in">Přihlásit</a>
+{/if}

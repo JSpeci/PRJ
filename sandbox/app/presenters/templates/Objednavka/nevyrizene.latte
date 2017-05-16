@@ -1,0 +1,25 @@
+{* Latte template *}
+
+{block content}
+{if $user->IsLoggedIn()}
+    <div class="block" id="dispecer">
+        <h1>Nevyřízené objednávky</h1>
+        <ul>
+            {foreach $nevyrizeneObjednavky as $o}
+
+                <li>{$o->cas|date:'%d.%m. %H:%M'} {$o->ulice} {$o->cislo} {$o->mesto}</li>
+
+            {/foreach}
+        </ul>
+    </div>
+    <div class="block" id="dispecer">
+        <h1>Předat objednávku řidiči</h1>
+        {control vyriditObjednavkuForm}
+    </div>
+    <div class="block" id="dispecer">
+        <a n:href="Homepage:"><h1>Domů</h1></a>
+    </div>
+
+{else}
+    <a n:href="Sign:in">Přihlásit</a>
+{/if}
